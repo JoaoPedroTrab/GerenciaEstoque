@@ -18,16 +18,12 @@ const Pecas = () => {
 
     const arr = data?.map((data, index) => {
       return (
-        <tr>
-          <td>{data.id}</td>
-          <td>{data.sku}</td>
-          <td>{data.nome}</td>
-          <td>{data.is_active}</td>
-          <td><select>
-              <option name="lista">Todos</option>
-              <option name="lista">{data.is_active}</option>
-              <option name="lista">{data.is_active}</option>
-            </select></td>
+      <tr>
+        <td>{data.id}</td>
+        <td>{data.sku}</td>
+        <td>{data.nome}</td>
+        <td>{data.is_active}</td>
+        <td>#</td>
       </tr>
       )
     })
@@ -35,13 +31,13 @@ const Pecas = () => {
     return (
       <div className="listaPecas">
         <Header/>
-        <div className="areaCadastro">
-        <span className="botaoCadastro"><Button variant="success">Cadastrar</Button>{' '}</span>
+        <div className="buttonArea">
+          <Button className= "botaoCadastro" variant="primary" href="/cadastro">Cadastrar</Button>{''}
         </div>
         <Table className="tabletest" striped borderless responsive>
           <thead>
             <tr>
-              <th>#</th>
+              <th><strong>#</strong></th>
               <th>SKU</th>
               <th>Nome</th>
               <th>Status da peça</th>

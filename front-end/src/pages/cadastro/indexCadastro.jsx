@@ -1,25 +1,19 @@
-import React from "react"
+import React from 'react';
+import Button from 'react-bootstrap/Button'
+import HeaderPMS from '../header/indexHeader'
 import './stylesCadastro.css'  //import estilizacao css
-import bootstrap from 'bootstrap' //import estilizacao bootstrao
-import Header from '../header/indexHeader'
 
 const Cadastro = () => { 
-
     return (
-        <div>
-            <Header/>
-            <div className="totalArea">
-                <div className="buttons"> 
-                    <div><h1>button 1</h1></div>
-                    <div><h1>button 1</h1></div>
-                    <span><h1>button 1</h1></span>
-                    <span><h1>button 1</h1></span>
+        <div className='header'>
+            <HeaderPMS/> 
+            <div className='container'>
+                <div className='box'>
+                    <p>a</p>
                 </div>
-    
-            </div> 
+            </div>
         </div>
-    );
+    )
 }
-
 
 export default Cadastro;

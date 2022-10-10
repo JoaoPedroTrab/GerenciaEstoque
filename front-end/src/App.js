@@ -4,12 +4,7 @@ import MainPage from './pages/listaPecas/indexLista'
 import Header from './pages/header/indexHeader'
 import Menus from './pages/menus/indexMenus'
 import Cadastro from './pages/cadastro/indexCadastro'
-//     <Router> {/* Sistema de rotas da pagina */}
-// <Routes>
-// <Route exact path="/" element={<Login />} />   
-// <Route exact path="/pecas" element={<MainPage />} />
-// </Routes>
-// </Router>
+
 import { 
   BrowserRouter as Router,
   Route,
