@@ -1,0 +1,6 @@
+.totalArea {
+    width: auto;
+    height: auto;
+    display: inline-flexbox;
+    background-color: red;
+}

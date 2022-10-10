@@ -4,3 +4,10 @@ tr:hover {
 th {
     background-color: white !important;
 }
+
+.areaCadastro {
+    width: auto;
+    height: 75px;
+    background-color: lightgray;
+    
+}

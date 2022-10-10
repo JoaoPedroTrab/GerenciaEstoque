@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import Header from "../header/indexHeader"
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import './stylesLista.css';
 
 const Pecas = () => {
     const [data, setDate] = useState();
@@ -17,15 +19,15 @@ const Pecas = () => {
     const arr = data?.map((data, index) => {
       return (
         <tr>
-        <td>{data.id}</td>
-        <td>{data.sku}</td>
-        <td>{data.nome}</td>
-        <td>{data.is_active}</td>
-        <td><select>
-            <option name="lista">Todos</option>
-            <option name="lista">{data.is_active}</option>
-            <option name="lista">{data.is_active}</option>
-          </select></td>
+          <td>{data.id}</td>
+          <td>{data.sku}</td>
+          <td>{data.nome}</td>
+          <td>{data.is_active}</td>
+          <td><select>
+              <option name="lista">Todos</option>
+              <option name="lista">{data.is_active}</option>
+              <option name="lista">{data.is_active}</option>
+            </select></td>
       </tr>
       )
     })
@@ -33,6 +35,9 @@ const Pecas = () => {
     return (
       <div className="listaPecas">
         <Header/>
+        <div className="areaCadastro">
+        <span className="botaoCadastro"><Button variant="success">Cadastrar</Button>{' '}</span>
+        </div>
         <Table className="tabletest" striped borderless responsive>
           <thead>
             <tr>
