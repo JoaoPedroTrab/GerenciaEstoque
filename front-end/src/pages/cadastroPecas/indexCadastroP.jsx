@@ -4,6 +4,7 @@ import HeaderPMS from '../header/indexHeader'
 import './stylesCadastroP.css'  //import estilizacao css
 import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
+import Axios from 'axios'
 
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -53,7 +54,13 @@ const CustomMenu = React.forwardRef(
 
 
 
-const Cadastro = () => { 
+function Cadastro () {
+
+ const addPost = data => Axios.post("http://172.22.1.11:3000/api/pecas", data) 
+  .then(response=> {
+    alert(JSON.stringify(response.data))
+  })
+  .cath(error => console.log(error))
     return (
         <div className='header'>
             <HeaderPMS/> 
@@ -104,6 +111,16 @@ const Cadastro = () => {
                             <Dropdown.Item href="#/action-3">3</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>                    
+                </div>
+                  <div className='formCPecas'>
+                    <span>cadastro teste</span>
+                    <form className='formCPecas' onSubmit={addPost}> 
+                      <Form.Control type="text" placeholder="Nome da Peça" required/> 
+                      <Form.Control type="text" placeholder="SKU" required/>
+                    <div className='containerLoginBotao'>
+                      <button type="submit" class="btn btn-primary btn-block" >Entrar</button>
+                    </div>
+                  </form> 
                 </div>
             </div>
         </div>

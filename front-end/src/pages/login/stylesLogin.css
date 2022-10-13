@@ -10,8 +10,8 @@
 }
 
 .boxLogin {
-    min-height: 100vh;
-    width: 100%;
+    min-height: 90vh;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     align-items:  center;
@@ -22,7 +22,7 @@
 }
 
 .login {
-    width: 375px;
+    width: 350px;
     border: rgb(204, 204, 204) 1px solid;
     border-radius: 10px;
     overflow: visible;
