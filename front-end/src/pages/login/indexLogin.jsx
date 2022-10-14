@@ -3,6 +3,7 @@ import pms from './assets/logo_pms.png' // import logo prefeitura
 import './stylesLogin.css'  //import estilizacao css
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import axios from 'axios'
 
 const Login = () => { 
     const[user, setUser] = useState(""); {/* definicao da variavel user e password (como npadrao vazio) para autenticacao */}
@@ -11,6 +12,7 @@ const Login = () => {
     const handleSubmit = (event) => { {/* cria o evento para fazer o submit dos dados user e password*/}
          event.preventDefault();
         console.log("submit", {user, password});
+        axios.get('http://localhost:8080/api/pecas');
     }
 
     return (

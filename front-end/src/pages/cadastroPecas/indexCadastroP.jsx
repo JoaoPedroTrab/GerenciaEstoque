@@ -5,6 +5,7 @@ import './stylesCadastroP.css'  //import estilizacao css
 import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
 import Axios from 'axios'
+import axios from 'axios';
 
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -54,13 +55,20 @@ const CustomMenu = React.forwardRef(
 
 
 
-function Cadastro () {
+function CadastroP () {
+  const [nome, setNome] = useState ('');
+  const [sku, setSKU] = useState ('');
 
- const addPost = data => Axios.post("http://172.22.1.11:3000/api/pecas", data) 
-  .then(response=> {
-    alert(JSON.stringify(response.data))
-  })
-  .cath(error => console.log(error))
+  const handleSubmit = async(e) => { 
+    e.prevenDefault();
+    try { 
+      const resp = await axios.post('https://course-api.com/axios-tutorial-post', {nome: nome, sku: sku})
+      console.log(resp.data);
+    } catch (error) { 
+        console.log(error.response);
+    }
+  }
+
     return (
         <div className='header'>
             <HeaderPMS/> 
@@ -114,7 +122,7 @@ function Cadastro () {
                 </div>
                   <div className='formCPecas'>
                     <span>cadastro teste</span>
-                    <form className='formCPecas' onSubmit={addPost}> 
+                    <form className='formCPecas' onSubmit={handleSubmit}> 
                       <Form.Control type="text" placeholder="Nome da Peça" required/> 
                       <Form.Control type="text" placeholder="SKU" required/>
                     <div className='containerLoginBotao'>
@@ -128,7 +136,7 @@ function Cadastro () {
     )
 }
 
-export default Cadastro;
+export default CadastroP;
 
 
 //  ---- todo ----
